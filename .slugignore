@@ -1,6 +1,0 @@
-*.ipynb
-.git
-.vscode
-*.log
-*.csv
-datasets/
