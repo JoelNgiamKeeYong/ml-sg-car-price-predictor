@@ -3,19 +3,171 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f8f8; /* Light off-white background */
+  --foreground: #333333; /* Dark text */
+  --primary-color: #2c3e50; /* Muted dark blue for a professional tone */
+  --secondary-color: #ffffff; /* White background for content area */
+  --accent-color: #2980b9; /* Soft accent blue for buttons */
+  --error-color: #e74c3c; /* Subtle red for error (still available for use) */
+  --success-color: #27ae60; /* Green for success messages */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f8f8f8;
+    --foreground: #333333;
+    --primary-color: #2c3e50;
+    --secondary-color: #ffffff;
+    --accent-color: #2980b9;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px;
+  padding: 30px;
+  background-color: var(--secondary-color);
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 2.8rem;
+  font-weight: 800; /* Making the title bold */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.description {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-label {
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+input,
+button {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+/* Input styles */
+input {
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+input:focus,
+button:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(41, 128, 185, 0.4);
+}
+
+input:invalid {
+  border-color: var(--error-color); /* Red border */
+}
+
+input:focus:invalid {
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.5); /* Red glow on focus for empty fields */
+}
+
+/* Button styles */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 16px;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background-color: #34495e;
+}
+
+/* Error and success messages */
+.error {
+  color: var(--error-color);
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+h3 {
+  color: var(--success-color);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+h3 span {
+  font-weight: 700; /* Bold the price number */
+}
+
+/* Placeholder styling */
+input::placeholder {
+  color: #7f8c8d;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  form {
+    gap: 1.5rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 14px;
+  }
 }
