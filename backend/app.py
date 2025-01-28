@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import joblib
 import pandas as pd
 
 # Specify the templates directory inside the app directory
 app = Flask(__name__)
+CORS(app)  # This will allow all domains, you can restrict it to your frontend domain
 
 # Load the trained model
 model = joblib.load('./models/model.pkl')
