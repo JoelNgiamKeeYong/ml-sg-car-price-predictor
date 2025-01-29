@@ -24,6 +24,83 @@
   }
 }
 
+/* Ensure the container has padding and centralized text */
+.bg-primary {
+  background-color: var(--primary-color);
+  text-align: center; /* Centralize the text */
+  border-radius: 12px;
+}
+
+/* Title styling */
+.bg-primary h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraph styling: Ensure text is white, non-bold */
+.bg-primary {
+  color: white;
+  font-size: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  font-weight: normal; /* Ensures the text is not bold */
+  line-height: 1.5; /* Adjust this value to increase/decrease line spacing */
+}
+
+/* Styling for the italic paragraph */
+p.italic {
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: normal; /* Ensure it's not bold */
+  padding-bottom: 2rem;
+}
+
+.instructions {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: bold; /* Ensure it's not bold */
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+/* Container to align items horizontally */
+.link-container {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+  gap: 10px; /* Space between text and icon */
+  margin-bottom: 2rem;
+}
+
+/* Style for the text "See full code" */
+.link-text {
+  font-size: 1rem;
+  color: white;
+  margin: 0; /* Remove margin around text */
+}
+
+/* Style for the GitHub link */
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.github-link:hover {
+  color: #f3f4f6;
+}
+
+/* GitHub icon size */
+.github-icon {
+  width: 24px;
+  height: 24px;
+}
+
 /* Global styling */
 body {
   color: var(--foreground);
@@ -74,6 +151,34 @@ h1 {
   margin-bottom: 2rem;
 }
 
+.car-price-prediction-box {
+  background-color: var(--accent-color); /* Matching submit button blue */
+  padding: 3rem; /* Increased padding for more space inside the box */
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  color: white; /* Ensures all text inside the box is white */
+}
+
+.car-price-prediction-box h1 {
+  color: white; /* White text color for the title */
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.car-price-prediction-box p {
+  color: white; /* White text color for the paragraphs */
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.car-price-prediction-box p:last-child {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
 /* Form styling */
 form {
   display: flex;
@@ -96,34 +201,21 @@ form {
 
 /* Input and button styles */
 input,
+select,
 button {
   padding: 16px;
   border-radius: 8px;
   border: 1px solid #ddd;
   font-size: 1.2rem;
   transition: all 0.3s ease;
+  width: 100%; /* Ensures inputs and selects fill their container */
+  max-width: 100%; /* Prevents overflow and ensures they align */
+  box-sizing: border-box; /* Prevents padding from causing overflow */
 }
 
 /* Input styles */
 input {
-  width: 100%;
   background-color: #f1f1f1;
-}
-
-/* Focus and hover effects */
-input:focus,
-button:hover {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 10px rgba(41, 128, 185, 0.4);
-}
-
-/* Invalid input styles */
-input:invalid {
-  border-color: var(--error-color);
-}
-
-input:focus:invalid {
-  box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
 }
 
 /* Button styles */
@@ -143,6 +235,25 @@ button:disabled {
 
 button:hover {
   background-color: #34495e;
+}
+
+/* Focus and hover effects */
+input:focus,
+select:focus,
+button:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(41, 128, 185, 0.4);
+}
+
+/* Invalid input styles */
+input:invalid,
+select:invalid {
+  border-color: var(--error-color);
+}
+
+input:focus:invalid,
+select:focus:invalid {
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
 }
 
 /* Error and success messages */
@@ -229,24 +340,89 @@ input::placeholder {
   }
 }
 
+/* Container for the title and author section */
+.header-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Container for the author text and GitHub link */
+.author-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Space between the text and the GitHub icon */
+  margin-top: 0.5rem; /* Space below the title */
+}
+
+/* GitHub link styling */
+.github-link {
+  color: #d1d5db; /* Equivalent to text-gray-400 */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.github-link:hover {
+  color: #f3f4f6; /* Equivalent to hover:text-gray-300 */
+}
+
+/* GitHub icon size */
+.github-icon {
+  width: 1.5rem; /* Adjust icon size */
+  height: 1.5rem; /* Adjust icon size */
+}
+
+/* Custom text styling */
+.custom-text {
+  font-size: 0.7rem;
+  color: white;
+  font-style: italic;
+  margin: 0; /* Remove default margin */
+}
+
 /* Select styling for dropdown */
 select {
-  padding-right: 40px; /* Adjust as per your design */
+  border-radius: 8px; /* Same border-radius as input */
+  border: 1px solid #ddd; /* Same border style as input */
+  background-color: #f1f1f1; /* Same background color as input */
+  font-size: 1.2rem; /* Same font size as input */
+  transition: all 0.3s ease; /* Same transition effect as input */
+  appearance: none; /* Remove default arrow */
   -webkit-appearance: none; /* Remove default arrow in Safari */
   -moz-appearance: none; /* Remove default arrow in Firefox */
-  appearance: none; /* Remove default arrow */
   position: relative;
+  width: 100%; /* Ensures the select element does not overflow its container */
+  max-width: 100%; /* Ensures consistent width with input fields */
+  box-sizing: border-box; /* Prevents padding from causing overflow */
 }
 
-select::-ms-expand {
-  display: none; /* Remove default arrow in IE */
+/* Focus and hover effects for select */
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(41, 128, 185, 0.4);
 }
 
+/* Custom chevron for the select dropdown */
 select::after {
   content: "▼"; /* Custom chevron */
   position: absolute;
-  right: 10px; /* Adjust distance from the edge */
+  right: 16px; /* Adjusted to match the padding on the right */
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none;
+  pointer-events: none; /* Prevent interfering with dropdown interaction */
+}
+
+/* Hide default select dropdown arrow in IE */
+select::-ms-expand {
+  display: none;
+}
+
+/* Invalid select styles */
+select:invalid {
+  border-color: var(--error-color);
+}
+
+select:focus:invalid {
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
 }

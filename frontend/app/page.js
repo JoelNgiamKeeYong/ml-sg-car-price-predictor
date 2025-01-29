@@ -155,20 +155,55 @@ export default function Home() {
     }
   };
 
+  // GitHub profile URL (replace with your actual GitHub profile link)
+  const githubUrl = "https://github.com/JoelNgiamKeeYong/ml-sg-car-price-predictor";
+
   return (
     <div className="container">
-      <div className="bg-primary p-8 text-center rounded-lg mb-8">
-        <h1 className="text-3xl font-bold text-white mb-4">🚙 Car Price Prediction 🚙</h1>
+
+      <div className="bg-primary p-8 pt-6 pb-6 pl-12 pr-12 text-center rounded-lg mb-8">
+
+        <div class="bg-primary p-8 pt-6 pb-6 pl-12 pr-12 text-center rounded-lg mb-8">
+          <div class="header-container">
+            <h1 class="title">Singapore Car Price Prediction</h1>
+            <div class="author-container">
+              <p class="custom-text italic">By Joel Ngiam Kee Yong</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="link-container">
+          <p class="link-text">See full code</p>
+          <a
+            href={githubUrl} // GitHub profile URL
+            target="_blank" // Open link in a new tab
+            rel="noopener noreferrer" // Security best practice for external links
+            class="github-link"
+            aria-label="Visit my GitHub profile" // Accessibility: Screen reader description
+          >
+            {/* GitHub SVG icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="github-icon" // Icon size and alignment
+              fill="white" // Icon color (inherits from text color)
+              aria-hidden="true" // Accessibility: Hide from screen readers (already described by the link)
+            >
+              {/* GitHub icon path */}
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+        </div>
 
         <p className="text-white text-m mb-6">
-          This dataset includes Singapore used car listings for sale, created in May 2021. Due to land constraints, Singapore has a unique car pricing structure where car population is controlled through various policies.
+          Due to land constraints, Singapore has a unique car pricing structure where car population is controlled through various policies. This tool utilizes machine learning models trained on a dataset that includes Singapore used car listings for sale, created in May 2021.
         </p>
 
-        <p className="text-white text-m mb-6">
-          This tool utilizes machine learning models trained on Singapore's used car data.
-        </p>
+        <p className="instructions">Fill in the car details to predict the price.</p>
 
-        <p className="text-white text-lg italic">Fill in the car details to predict the price.</p>
+
+
+
 
       </div>
 
