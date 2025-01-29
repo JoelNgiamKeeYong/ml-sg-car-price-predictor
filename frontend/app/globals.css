@@ -2,16 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Root variables for theme colors */
 :root {
   --background: #f8f8f8; /* Light off-white background */
   --foreground: #333333; /* Dark text */
-  --primary-color: #2c3e50; /* Muted dark blue for a professional tone */
-  --secondary-color: #ffffff; /* White background for content area */
-  --accent-color: #2980b9; /* Soft accent blue for buttons */
-  --error-color: #e74c3c; /* Subtle red for error (still available for use) */
-  --success-color: #27ae60; /* Green for success messages */
+  --primary-color: #2c3e50; /* Muted dark blue */
+  --secondary-color: #ffffff; /* White content background */
+  --accent-color: #2980b9; /* Soft accent blue */
+  --error-color: #e74c3c; /* Red for error */
+  --success-color: #27ae60; /* Green for success */
 }
 
+/* Dark mode variables */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #f8f8f8;
@@ -22,6 +24,7 @@
   }
 }
 
+/* Global styling */
 body {
   color: var(--foreground);
   background: var(--background);
@@ -36,6 +39,11 @@ body {
   font-size: 16px;
 }
 
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+/* Container styles */
 .container {
   width: 100%;
   max-width: 900px;
@@ -47,23 +55,26 @@ body {
   border: 1px solid #ddd;
 }
 
+/* Title styling */
 h1 {
   color: var(--primary-color);
   font-size: 2.8rem;
-  font-weight: 800; /* Making the title bold */
+  font-weight: 800;
   text-align: center;
   margin-bottom: 2rem;
 }
 
+/* Description styling */
 .description {
   text-align: center;
-  color: #555;
+  color: white;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 300;
   font-style: italic;
   margin-bottom: 2rem;
 }
 
+/* Form styling */
 form {
   display: flex;
   flex-direction: column;
@@ -76,12 +87,14 @@ form {
   gap: 8px;
 }
 
+/* Label styling */
 .input-label {
   color: var(--primary-color);
   font-weight: 800;
   font-size: 1.1rem;
 }
 
+/* Input and button styles */
 input,
 button {
   padding: 16px;
@@ -97,18 +110,20 @@ input {
   background-color: #f1f1f1;
 }
 
+/* Focus and hover effects */
 input:focus,
 button:hover {
   border-color: var(--primary-color);
   box-shadow: 0 0 10px rgba(41, 128, 185, 0.4);
 }
 
+/* Invalid input styles */
 input:invalid {
-  border-color: var(--error-color); /* Red border */
+  border-color: var(--error-color);
 }
 
 input:focus:invalid {
-  box-shadow: 0 0 10px rgba(231, 76, 60, 0.5); /* Red glow on focus for empty fields */
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
 }
 
 /* Button styles */
@@ -119,7 +134,6 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  padding: 16px;
 }
 
 button:disabled {
@@ -154,6 +168,41 @@ input::placeholder {
   color: #7f8c8d;
 }
 
+/* Predicted price container */
+.price-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* Price text styling */
+.price-text {
+  color: var(--success-color);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.price-text span {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-left: 0.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Hover effect for predicted price */
+.price-container:hover {
+  background-color: #ecf0f1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
 /* Mobile responsiveness */
 @media screen and (max-width: 768px) {
   .container {
@@ -170,4 +219,34 @@ input::placeholder {
     font-size: 1.1rem;
     padding: 14px;
   }
+
+  .price-text {
+    font-size: 1.6rem;
+  }
+
+  .price-text span {
+    font-size: 1.8rem;
+  }
+}
+
+/* Select styling for dropdown */
+select {
+  padding-right: 40px; /* Adjust as per your design */
+  -webkit-appearance: none; /* Remove default arrow in Safari */
+  -moz-appearance: none; /* Remove default arrow in Firefox */
+  appearance: none; /* Remove default arrow */
+  position: relative;
+}
+
+select::-ms-expand {
+  display: none; /* Remove default arrow in IE */
+}
+
+select::after {
+  content: "▼"; /* Custom chevron */
+  position: absolute;
+  right: 10px; /* Adjust distance from the edge */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }

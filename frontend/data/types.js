@@ -1,7 +1,7 @@
 // data/types.js
-export const carTypes = [
-    "Luxury Sedan",
+export const types = [
     "SUV",
+    "Luxury Sedan",
     "Hatchback",
     "Mid-Sized Sedan",
     "Sports Car",
